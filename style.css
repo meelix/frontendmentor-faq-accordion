@@ -1,0 +1,174 @@
+/* --------------- */
+/*      Fonts      */
+/* --------------- */
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./assets/fonts/woff2/subset-WorkSans-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./assets/fonts/woff2/subset-WorkSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./assets/fonts/woff2/subset-WorkSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------- */
+/*      Config     */
+/* --------------- */
+:root {
+  --purple: #301534;
+  --pink: #F8EEFF;
+  --pale-purple: #8B6990;
+  --bright-pink: #AD28EB;
+}
+
+/* --------------- */
+/* Everything else */
+/* --------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--pale-purple);
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  font-family: "Work Sans";
+  background: var(--pink) url("./assets/images/background-pattern-mobile.svg") top center/100% auto no-repeat;
+}
+
+main {
+  border-radius: 10px;
+  padding: 24px;
+  gap: 24px;
+  width: calc(100% - 48px);
+  background-color: #fff;
+  width: min(calc(100% - 48px), 600px);
+  box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.10);
+}
+
+h1 {
+  font-family: "Work Sans";
+  font-weight: 700;
+  font-size: 32px;
+  margin: 0 0 24px;
+  color: var(--purple);
+  &:before {
+    content: '';
+    width: 24px;
+    height: 1lh;
+    vertical-align: bottom;
+    margin-right: 24px;
+    background: url("./assets/images/icon-star.svg") center center/100% 100% no-repeat;
+    display: inline-block;
+  }
+}
+
+details {
+  color: var(--pale-purple);
+  font-family: "Work Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+details summary {
+  width: 100%;
+  text-align: left;
+  color: var(--purple);
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:hover {
+    color: var(--bright-pink);
+    cursor: pointer;
+  }
+  &:after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 24px;
+    align-items: center;
+    background: url("./assets/images/icon-plus.svg") right center/30px 30px no-repeat;
+    display: inline-block;
+  }
+}
+details[open] summary {
+  padding: 5px 0 10px;
+  &:after {
+    background-image: url("./assets/images/icon-minus.svg");
+  }
+}
+
+hr {
+  margin: 20px 0;
+  height: 1px;
+  background-color: #F8EEFF;
+  border: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 5px;
+  font-size: 11px;
+  text-align: center;
+  & a {
+    color: var(--purple );
+  }
+}
+
+/* --------------- */
+/*     Desktop     */
+/* --------------- */
+@media (min-width: 700px) {
+  body {
+    background-image: url("./assets/images/background-pattern-desktop.svg");
+  }
+
+  main {
+    padding: 40px;
+    border-radius: 16px;
+  }
+  h1 {
+    font-size: 56px;
+    margin-bottom: 32px;
+    &:before {
+      content: '';
+      width: 40px;
+    }
+  }
+
+  details {
+    font-size: 16px;
+    & summary {
+      font-size: 18px;
+    }
+  }
+
+  hr {
+    margin: 24px 0;
+  }
+}
